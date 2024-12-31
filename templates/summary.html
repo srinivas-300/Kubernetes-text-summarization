@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .summary-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+        }
+        .summary-section h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .summary-section p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Document Summary</h1>
+
+    <div class="summary-section">
+        <h2>What is the document about?</h2>
+        <p>{{ summary_data['What is the document about?'] }}</p>
+    </div>
+
+    <div class="summary-section">
+        <h2>What are the key points?</h2>
+        <p>{{ summary_data['What are the key points?'] }}</p>
+    </div>
+
+    <div class="summary-section">
+        <h2>What is the conclusion?</h2>
+        <p>{{ summary_data['What is the conclusion?'] }}</p>
+    </div>
+
+    <div class="summary-section">
+        <h2>What are the results?</h2>
+        <p>{{ summary_data['what are the results?'] }}</p>
+    </div>
+</div>
+
+</body>
+</html>

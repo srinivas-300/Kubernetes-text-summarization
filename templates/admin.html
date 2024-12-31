@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Tabs Navigation */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 20px;
+        }
+
+        .tabs a {
+            flex: 1;
+            padding: 14px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tabs a:hover {
+            background-color: #555;
+        }
+
+        .tabs a.active {
+            background-color: #4CAF50;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 14px;
+            color: #555;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .empty-message {
+            text-align: center;
+            font-size: 18px;
+            color: #777;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <a href="#" id="tab-users" class="active">Users</a>
+            <a href="#" id="tab-summaries">Summaries</a>
+            <a href="#" id="tab-analytics">Analytics</a>
+        </div>
+
+        <!-- Users Tab Content -->
+        <div id="content-users" class="tab-content active">
+            {% if users|length == 0 %}
+                <div class="empty-message">
+                    <p>No users found.</p>
+                </div>
+            {% else %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Actions</th> <!-- Added Actions column -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in users %}
+                        <tr>
+                            <td>{{ record['_id'] }}</td>
+                            <td>{{ record['username'] }}</td>
+                            <td>{{ record['email'] }}</td>
+                            <td>{{ record['password'] }}</td>
+                            <td>
+                                <!-- Update Button -->
+                                <a href="{{ url_for('update_user', user_id=record['_id']) }}">Edit</a>
+                                
+                                <!-- Delete Form -->
+                                <form action="{{ url_for('delete_user', user_id=record['_id']) }}" method="POST" style="display:inline;">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+
+
+        <!-- Summaries Tab Content -->
+        <div id="content-summaries" class="tab-content">
+            {% if summaries|length == 0 %}
+                <div class="empty-message">
+                    <p>No summaries found.</p>
+                </div>
+            {% else %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document Name</th>
+                            <th>What is the document about?</th>
+                            <th>What are the key points?</th>
+                            <th>What is the conclusion?</th>
+                            <th>What are the results?</th>
+                            <th>Time Stamp</th>
+                            <th>URI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in summaries %}
+                        <tr>
+                            <td>{{ record['document_name'] }}</td>
+                            <td>{{ record['summary']['What is the document about?'] }}</td>
+                            <td>{{ record['summary']['What are the key points?'] }}</td>
+                            <td>{{ record['summary']['What is the conclusion?'] }}</td>
+                            <td>{{ record['summary']['what are the results?'] }}</td>
+                            <td>{{ record['timestamp'] }}</td>
+                            <td><a href="{{ record['file_uri'] }}" target="_blank">View Document</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+
+        <!-- Analytics Tab Content -->
+        <div id="content-analytics" class="tab-content">
+            <h2>Analytics Data</h2>
+            <!-- Add any custom analytics or visualizations here -->
+            <p>Analytics content will be displayed here.</p>
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="btn">Log Out</a>
+    </div>
+
+    <script>
+        // Tab Switching Logic
+        document.getElementById("tab-users").addEventListener("click", function() {
+            switchTab("users");
+        });
+        document.getElementById("tab-summaries").addEventListener("click", function() {
+            switchTab("summaries");
+        });
+        document.getElementById("tab-analytics").addEventListener("click", function() {
+            switchTab("analytics");
+        });
+
+        function switchTab(tab) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.tabs a').forEach(function(tabLink) {
+                tabLink.classList.remove('active');
+            });
+
+            // Add active class to the clicked tab
+            document.getElementById('tab-' + tab).classList.add('active');
+
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(function(tabContent) {
+                tabContent.classList.remove('active');
+            });
+
+            // Show the selected tab content
+            document.getElementById('content-' + tab).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "your-project-id",
+  "private_key_id": "your-id",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqL0xlrA1DevO2\nJuAFx4dqXpC3twA5zXI11GzRRTfcUHbzOh7+gWTEZ1gT1l6Ja/gV5Sr64+pFdOS5\nWzMzc98Co3EhN/jxG4vV6C6wk0B0xh49pNB6CkXTQ9BLJxH1N36vU09rT8Kiaaxx\nN1AX58pPSYh+lJ7X6y2KwvrSKtNEwTHa3+JB/zwysb9RoZNrtHbg5ewtB1BGR9Qs\nDlsl0Lebp/Sa78okPom7XE7dYlUm554VqhX9WhWcewttpcCaRuVg+L/GyGY/fTSZ\ngdaqf9wRBDVMGRe8Zb+x93ZjY1b9cAFq0kmL/VoUBsbwCAEQm3daC6KrfJBkPg6A\nc8OylsXrAgMBAAECggEAT/ASmwlDW6iDlFJTVPOhhFGx+VFgrkX1uRo0GOJB+F7l\nWJ860sH1kpmWUg8V7cfEyogP9bQbpQ9gpj4T4T2yiVs7NubDLIGLX+kFEVTBaHhs\n2PizIjf0D2Whj8Nk2IF+JJ1lxxq6ai5n3PAl02zBZxe7oPVvXS1vAWhPh2utO/Qd\nLkrzd/gD+HzKNGTyINnt5qvU/3w3xnsDgKC9chnvuYMTehPENg+KZTtVLtK/xQQv\nAnrz7gldBdcV7few/8tDoXScufEbZwk5gUUf3cKJBpTy4jTcaZzcGTzFNmXd4FGe\nJPRkufCEJReIPwTQbEoaNo1Lrrbl8VPxFt6NeYVB/QKBgQDWXcjgSWxOlvh1YvQ3\nz1VVQTichAEy0zFdaC5NlV9EX6JOMNaKZuAC14L+rFmlWDI289y+guGQmBNIS5Y6\no3p4pXSbr3kPRgOQXoxjD0+MZQP2HsxbooLJxbOFPBdZiPhWniI7DII4hYLD7OF1\nBD84PZvZBQu0K2A5+y4RVlSs1wKBgQDLPNJVwK1XOjoxC3Q1iXwz1dNcO0tz75DH\nJMXcVX/TdxOgHAqRjz3dmaZ9ZqT/B2vCUCLFIYkWygiNeQJSWqxYiO90hBpkZDQX\n4PkPRdybWysTQQLZWFWZ3/eHj+FHeKNW99PQhfcuqoxEUp1vZObwYYCOJNdmsT5g\nioOvwb8ZDQKBgFWZma9GYoN3cbueShtHJbInmy2U4M2k29+KzIKalTI+ZheHFQSr\nU+SOnnaH6DxIXbTn6EwDA4Oz1m9WD6VWxn8KwuewSE07Dg1GVBTydjd/1vcfEUe+\nOy/LTIZ1mnVcZp5gAxdFRXLAjZkjLFyH157jqyocA7JsZ75/eMPfj2x9AoGAIW7e\n9wZcPZYxjnHg6xGz4d8SBwEmF2tYeLoe5nEWNxZGnzcdsfZLahHlpollKSLyYiPG\npIEwyRPxNjyq2htacLIOGi/FG7C0NR1oO0/1y4TC4Eb4jgKPCmIimSVdHOHGlP7t\n1EbFc+LQckjY50NFDlQrzrZWzOjpZv5CTX5kzl0CgYEAg5aWM8lv93Y3i0v8fqbt\n2XMkMv235IgMAuLFmBNxhKgngIH8CMW8s0ebMjDEw8fkuHmyxT0+9jWFzGmDuqB0\naFGlWn0VQ5NatyIDKE2sTDvksobngy+lYGhJ5eE2ciSpKNVHC2CGRRe9JAm0MmEY\nMYhRG+1hwo+MXMIj/Vl0TEs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "flask-app-storage-service-acco@adroit-flare-437719-d9.iam.gserviceaccount.com",
+  "client_id": "108654064225407872071",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/flask-app-storage-service-acco%40adroit-flare-437719-d9.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
